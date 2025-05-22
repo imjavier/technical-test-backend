@@ -9,7 +9,7 @@ services:
       - "${POSTGRES_LOCAL_PORT}:${POSTGRES_PORT}"
     restart: always
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - tech-test:/var/lib/postgresql/data
     healthcheck:
       test: "pg_isready --username=${POSTGRES_USER} && psql --username=${POSTGRES_USER} --list"
       timeout: 5s
@@ -39,5 +39,5 @@ services:
         - technical_test_database
 
 volumes:
-  pg_data:
+  tech-test:
     driver: local
