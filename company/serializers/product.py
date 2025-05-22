@@ -4,7 +4,7 @@ from company.models import Product, ProductPrice
 class ProductPriceSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductPrice
-        fields = '__all__'
+        exclude = ['product']
 
 class ProductSerializer(serializers.ModelSerializer):
     prices = ProductPriceSerializer(many=True, read_only=True)
