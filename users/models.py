@@ -12,6 +12,9 @@ class User(AbstractUser):
         default=UserType.EXTERNAL,
         verbose_name='Tipo de usuario'
     )
+    email = models.EmailField(unique=True)
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'user_type']
 
     class Meta:
         verbose_name = 'usuario'
