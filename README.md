@@ -37,7 +37,7 @@ APP_PASSWORD=admin123
    ```powershell
    docker compose -f .\docker-compose.yml --env-file .\.env up --build
    ```
-3. El backend estará disponible en `http://localhost:8000/`
+3. El backend estará disponible en `http://localhost:3000/`
 
 
 ## Endpoints principales
