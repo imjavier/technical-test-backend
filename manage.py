@@ -20,3 +20,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+    from scripts.create_admin import create_admin
+    create_admin()
