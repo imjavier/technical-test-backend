@@ -17,10 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from users.views import LoginView
-from company.urls import router as company_router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/login/', LoginView.as_view(), name='login'),
-    path('api/', include(company_router.urls)),
+    path('api/', include('company.urls')),
 ]
