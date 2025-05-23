@@ -12,6 +12,9 @@ class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
     permission_classes = [IsAuthenticated, IsAdminUserType]
     authentication_classes = [JWTAuthentication]
+    filterset_fields = {
+        'company': ['exact'],
+    }
 
 class ProductPriceViewSet(viewsets.ModelViewSet):
     serializer_class = ProductPriceSerializer
